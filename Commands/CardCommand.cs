@@ -22,7 +22,7 @@ public class CardCommand : Command
             "[link=https://antoinegriffard.com][deepskyblue3]https://antoinegriffard.com[/][/]\n" +
             "[link=https://bsky.app/profile/antoinegriffard.com][deepskyblue3]BlueSky[/][/] • " +
             "[link=https://www.linkedin.com/in/agriffard/][deepskyblue3]LinkedIn[/][/]\n\n" +
-            "[italic grey].NET • Microsft MVP • Orchard Core contributor[/]"
+            "[italic grey].NET • Microsoft MVP • Orchard Core contributor[/]"
         );
 
         // Panel with purple border, not full-width
