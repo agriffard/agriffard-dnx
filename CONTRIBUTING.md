@@ -43,7 +43,7 @@ If you need to publish manually:
 
 ```bash
 dotnet pack -c Release
-dotnet nuget push bin\Release\net10.0\agriffard.1.0.0.nupkg --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
+dotnet nuget push bin\Release\agriffard.1.0.0.nupkg --api-key YOUR_API_KEY --source https://api.nuget.org/v3/index.json
 ```
 
 ### GitHub Action Setup
