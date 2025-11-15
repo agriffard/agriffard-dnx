@@ -47,7 +47,7 @@ public class CardCommand : Command
         };
         AnsiConsole.Write(bottom);
 
-        AnsiConsole.MarkupLine("\n[dim]Try '[deepskyblue3]agriffard blog[/]' or '[mediumorchid1]agriffard youtube[/]' for more options[/]");
+        AnsiConsole.MarkupLine("\n[dim]Try '[deepskyblue3]agriffard blog[/]' or '[mediumorchid1]agriffard bluesky[/]' for more options[/]");
 
         return 0;
     }
