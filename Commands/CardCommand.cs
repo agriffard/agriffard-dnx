@@ -1,0 +1,54 @@
+using Spectre.Console;
+using Spectre.Console.Cli;
+using System.Threading;
+
+namespace agriffard.Commands;
+
+public class CardCommand : Command
+{
+    public override int Execute(CommandContext context, CancellationToken cancellationToken = default)
+    {
+        // Top rule with standard color
+        var top = new Rule("[deepskyblue3]────────────────────────────────────────[/]")
+        {
+            Justification = Justify.Center
+        };
+        AnsiConsole.Write(top);
+
+        // Card content
+        var panelContent = new Markup(
+            "[bold mediumorchid1]Antoine 'agriffard' Griffard[/]\n" +
+            "[grey]Software Developer[/]\n\n" +
+            "[link=https://antoinegriffard.com][deepskyblue3]https://antoinegriffard.com[/][/]\n" +
+            "[link=https://bsky.app/profile/antoinegriffard.com][deepskyblue3]BlueSky[/][/] • " +
+            "[link=https://www.linkedin.com/in/agriffard/][deepskyblue3]LinkedIn[/][/]\n\n" +
+            "[italic grey].NET • Microsft MVP • Orchard Core contributor[/]"
+        );
+
+        // Panel with purple border, not full-width
+        var panel = new Panel(panelContent)
+        {
+            Border = BoxBorder.Rounded,
+            BorderStyle = new Style(Color.MediumOrchid1),
+            Padding = new Padding(2, 1, 2, 1),
+            Expand = false
+        };
+
+        // Simple header (no alignment property on some Spectre versions)
+        panel.Header = new PanelHeader("[bold deepskyblue3]💠 agriffard[/]");
+
+        // Center the whole panel (Spectre.Console centers non-expanded panels by default)
+        AnsiConsole.Write(panel);
+
+        // Bottom rule with standard color
+        var bottom = new Rule("[mediumorchid1]────────────────────────────────────────[/]")
+        {
+            Justification = Justify.Center
+        };
+        AnsiConsole.Write(bottom);
+
+        AnsiConsole.MarkupLine("\n[dim]Try '[deepskyblue3]agriffard blog[/]' or '[mediumorchid1]agriffard youtube[/]' for more options[/]");
+
+        return 0;
+    }
+}
