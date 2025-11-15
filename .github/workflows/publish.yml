@@ -33,6 +33,7 @@ jobs:
         run: dotnet pack "${{ env.PROJECT_FILE }}" --configuration Release --no-build --no-restore --output "${{ env.PACK_OUTPUT }}"
 
       - name: Push to NuGet
+        if: ${{ github.event_name == 'release' && github.event.action == 'published' && github.event.release.tag_name != '' }}
         shell: pwsh
         run: |
           Get-ChildItem "${{ env.PACK_OUTPUT }}" -Filter *.nupkg |
